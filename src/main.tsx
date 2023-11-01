@@ -1,12 +1,21 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
 import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/roboto/500.css';
 import './index.css';
+import { RouterProvider, Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom';
+import { LinkProps } from '@mui/material/Link';
+import router from './routes/routes.tsx';
+
+const LinkBehavior = React.forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'> & { href: RouterLinkProps['to'] }>(
+  (props, ref) => {
+    const { href, ...other } = props;
+    return <RouterLink ref={ref} to={href} {...other} />;
+  },
+);
 
 const theme = createTheme({
   typography: {
@@ -19,12 +28,24 @@ const theme = createTheme({
       fontFamily: "'Roboto', sans-serif",
     },
   },
+  components: {
+    MuiLink: {
+      defaultProps: {
+        component: LinkBehavior,
+      } as LinkProps,
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        LinkComponent: LinkBehavior,
+      },
+    },
+  },
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,
 );
