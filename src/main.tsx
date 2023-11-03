@@ -1,11 +1,11 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/roboto/500.css';
-import './index.css';
 import { RouterProvider, Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom';
 import { LinkProps } from '@mui/material/Link';
 import router from './routes/routes.tsx';
@@ -18,6 +18,14 @@ const LinkBehavior = React.forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, '
 );
 
 const theme = createTheme({
+  palette: {
+    background: {
+      default: '#000000',
+    },
+    text: {
+      primary: '#373737',
+    },
+  },
   typography: {
     fontFamily: "'Open Sans', sans-serif",
     fontWeightRegular: 400,
@@ -39,12 +47,23 @@ const theme = createTheme({
         LinkComponent: LinkBehavior,
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: '#f9f9f9',
+        },
+        ':root': {
+          'max-width': '2000px',
+        },
+      },
+    },
   },
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>,
