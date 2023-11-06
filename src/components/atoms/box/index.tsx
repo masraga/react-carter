@@ -5,12 +5,13 @@ interface Props {
   children?: React.ReactNode;
   component?: any;
   sx?: any;
+  className?: string;
 }
 
 const Box = (props: Props) => {
-  const { children, component, sx } = props;
+  const { children, component, sx, className } = props;
   return (
-    <MuiBox component={component} sx={sx}>
+    <MuiBox component={component} sx={sx} className={className}>
       {children}
     </MuiBox>
   );

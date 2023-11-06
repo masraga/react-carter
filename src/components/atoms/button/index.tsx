@@ -11,6 +11,8 @@ interface Props {
   className?: string;
   color: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
   variant: 'contained' | 'outlined' | 'text';
+  component?: any;
+  to?: any;
 }
 
 const Buttons = (props: Props) => {
@@ -23,6 +25,8 @@ const Buttons = (props: Props) => {
       color={props.color}
       variant={props.variant}
       className={props.className}
+      component={props.component}
+      to={props.to}
     >
       {props.children}
     </MuiButton>
