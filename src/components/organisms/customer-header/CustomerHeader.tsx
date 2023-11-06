@@ -3,44 +3,40 @@ import Paper from '../../atoms/paper';
 import Button from '../../atoms/button';
 import Box from '../../atoms/box';
 import IconButton from '../../molecules/icon-button';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
+import SearchComponent from '../../molecules/search-component';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import RequestQuote from '@mui/icons-material/RequestQuote';
-import Search from '@mui/icons-material/Search';
 import '@fontsource/rubik/800.css';
 import './CustomerHeader.css';
+import React from 'react';
 
 const CustomerHeader = () => {
+  const [searchIsShow, setSearchIsShow] = React.useState<boolean>(false);
+  const [searchItem, setSearchItem] = React.useState<Array<{ url: string; name: React.ReactNode }>>([]);
+
+  const searchOnChange = (e: any) => {
+    setSearchItem([...searchItem, { url: '/product', name: <>{e.target.value}</> }]);
+    setSearchIsShow(true);
+    if (e.target.value == '') {
+      setSearchIsShow(false);
+      setSearchItem([]);
+    }
+  };
+
   return (
     <>
       <Paper square={true}>
         <Container>
-          <Box sx={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+          <Box className="header-item">
             <div className="app-title">
               <Button variant="text" color="warning" className="btn-app-title">
                 K.
               </Button>
             </div>
-            <div className="search-bar" style={{ width: '50%', paddingTop: 13 }}>
-              <TextField
-                id="outlined-start-adornment"
-                sx={{ fontSize: 10 }}
-                fullWidth={true}
-                size="small"
-                placeholder="Cari seluruh sepeda disini..."
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <Search />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </div>
+            <SearchComponent searchItem={searchItem} searchIsShow={searchIsShow} searchOnChange={searchOnChange} />
             <div className="header-button" style={{ paddingTop: 13 }}>
-              <Box>
+              <Box className="icon-button-container">
                 <IconButton title="riwayat transaksi" href="/product">
                   <RequestQuote fontSize="medium" />
                 </IconButton>
@@ -55,6 +51,7 @@ const CustomerHeader = () => {
           </Box>
         </Container>
       </Paper>
+      <br />
     </>
   );
 };

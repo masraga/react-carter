@@ -1,0 +1,33 @@
+.search-bar {
+  position: relative;
+  width: 50%;
+  padding-top: 13px;
+}
+
+.search-item-box {
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+}
+
+.search-item-box > .item {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.search-item-box > .item:hover {
+  background-color: #999;
+}
+
+.search-item-box > .item > a {
+  text-decoration: none;
+  width: 100%;
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 82%;
+  }
+}

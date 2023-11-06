@@ -3,3 +3,24 @@
   font-family: 'Rubik', sans-serif !important;
   font-weight: 700;
 }
+
+.header-item {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.icon-button-container > a {
+  padding-left: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-item {
+    justify-content: flex-start;
+  }
+
+  .icon-button-container {
+    display: none;
+  }
+}
