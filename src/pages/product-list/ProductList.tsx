@@ -91,7 +91,7 @@ const ProductCard = (props: TProductCard) => {
   const muiTheme = useTheme();
   return (
     <>
-      <Grid item sm={3}>
+      <Grid item sm={4}>
         <Card>
           <CardActionArea href="/">
             <CardMedia sx={{ height: 220, objectFit: 'contain' }} image={props.image} title="green iguana" />
@@ -150,7 +150,7 @@ const ProductList = () => {
 
     return (
       <>
-        <Container>
+        <Container maxWidth="lg">
           <Box>
             <Grid container spacing={4}>
               {CardList}

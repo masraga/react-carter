@@ -16,6 +16,9 @@ export default function CustomerFooter(props: TCustomerFooter) {
 
   return (
     <>
+      <br />
+      <br />
+      <br />
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels
