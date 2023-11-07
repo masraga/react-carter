@@ -30,7 +30,7 @@ const CustomerHeader = () => {
         <Container>
           <Box className="header-item">
             <div className="app-title">
-              <Button variant="text" color="warning" className="btn-app-title">
+              <Button variant="text" to="/" color="warning" className="btn-app-title">
                 K.
               </Button>
             </div>

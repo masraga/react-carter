@@ -1,0 +1,62 @@
+.desktop__product-detail-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-image {
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-info {
+  padding: 1.1rem;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-info > .stock-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-info > .description {
+  margin-top: 1.5rem;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-info > .price {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.desktop__product-detail-container > .desktop__product-detail-info > .price > .fee-label {
+  margin-top: 0.5rem;
+  padding-left: 0.1rem;
+}
+
+.desktop__booking-summary {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+}
+
+.desktop__booking-summary.active {
+  transition: bottom 0.2s;
+  bottom: 0;
+}
+
+@media screen and (max-width: 840px) {
+  .desktop__product-detail-container {
+    display: block;
+  }
+
+  .desktop__product-detail-container > .desktop__product-detail-image {
+    padding-top: 0.8rem;
+    padding-left: 0rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .desktop__product-detail-image > .image-info {
+    display: block;
+    margin: 0 auto;
+  }
+}

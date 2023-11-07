@@ -13,6 +13,7 @@ interface Props {
   variant: 'contained' | 'outlined' | 'text';
   component?: any;
   to?: any;
+  type?: string;
 }
 
 const Buttons = (props: Props) => {
@@ -27,6 +28,7 @@ const Buttons = (props: Props) => {
       className={props.className}
       component={props.component}
       to={props.to}
+      type={props.type || 'submit'}
     >
       {props.children}
     </MuiButton>

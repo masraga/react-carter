@@ -35,6 +35,9 @@ const theme = createTheme({
       fontWeight: 600,
       fontFamily: "'Roboto', sans-serif",
     },
+    h6: {
+      fontSize: 18,
+    },
   },
   components: {
     MuiLink: {

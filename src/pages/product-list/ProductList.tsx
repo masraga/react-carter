@@ -4,7 +4,6 @@ import Container from '../../components/atoms/container';
 import Box from '../../components/atoms/box';
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -28,7 +27,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
   {
     name: 'MTB 27.5 INCH PACIFIC VIGILON 1.0 ALLOY SIZE M',
@@ -37,7 +36,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
   {
     name: 'MTB 27.5 INCH PACIFIC VIGILON 1.0 ALLOY SIZE M',
@@ -46,7 +45,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
   {
     name: 'MTB 27.5 INCH PACIFIC VIGILON 1.0 ALLOY SIZE M',
@@ -55,7 +54,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
   {
     name: 'MTB 27.5 INCH PACIFIC VIGILON 1.0 ALLOY SIZE M',
@@ -64,7 +63,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
   {
     name: 'MTB 27.5 INCH PACIFIC VIGILON 1.0 ALLOY SIZE M',
@@ -73,7 +72,7 @@ const DBProduct: Array<{
     stock: 50,
     rating: 4.5,
     totalFee: 50000,
-    url: '/product',
+    url: '/product/bmx-downhill-spp',
   },
 ];
 
@@ -93,7 +92,7 @@ const ProductCard = (props: TProductCard) => {
     <>
       <Grid item sm={4}>
         <Card>
-          <CardActionArea href="/">
+          <CardActionArea href={props.url}>
             <CardMedia sx={{ height: 220, objectFit: 'contain' }} image={props.image} title="green iguana" />
             <CardContent>
               <Typography
