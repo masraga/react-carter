@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/Star';
+import GetScreenSize from '../../hooks/GetScreenSize';
 
 const DBProduct: Array<{
   name: string;
@@ -104,12 +105,12 @@ const ProductCard = (props: TProductCard) => {
                 {props.name}
               </Typography>
               <Grid container>
-                <Grid xs={6}>
+                <Grid item xs={6}>
                   <Typography variant="body2" color={muiTheme.palette.text.disabled}>
                     stok : {props.stock}
                   </Typography>
                 </Grid>
-                <Grid xs={6}>
+                <Grid item xs={6}>
                   <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Typography variant="caption">
                       <StarIcon color="warning" fontSize="small" />
@@ -141,17 +142,29 @@ const ProductCard = (props: TProductCard) => {
 };
 
 const ProductList = () => {
+  const screenSize = GetScreenSize();
   const ShowProduct = () => {
     let CardList: Array<React.ReactNode> = [];
-    DBProduct.forEach((v) => {
-      CardList.push(ProductCard(v));
+    DBProduct.forEach((v, i) => {
+      CardList.push(
+        <ProductCard
+          name={v.name}
+          image={v.image}
+          url={v.url}
+          stock={v.stock}
+          rating={v.rating}
+          totalFee={v.totalFee}
+          feeLabel={v.feeLabel}
+          key={`show-product-${i}`}
+        />,
+      );
     });
 
     return (
       <>
         <Container maxWidth="lg">
           <Box>
-            <Grid container spacing={4}>
+            <Grid key={'Test'} container spacing={4}>
               {CardList}
             </Grid>
           </Box>
@@ -164,7 +177,7 @@ const ProductList = () => {
     <>
       <CustomerHeader />
       <ShowProduct />
-      <CustomerFooter menu="dashboard" />
+      {screenSize.width < 900 ? <CustomerFooter menu="dashboard" /> : ''}
     </>
   );
 };

@@ -10,8 +10,10 @@ import RequestQuote from '@mui/icons-material/RequestQuote';
 import '@fontsource/rubik/800.css';
 import './CustomerHeader.css';
 import React from 'react';
+import GetScreenSize from '../../../hooks/GetScreenSize';
 
 const CustomerHeader = () => {
+  const screenSize = GetScreenSize();
   const [searchIsShow, setSearchIsShow] = React.useState<boolean>(false);
   const [searchItem, setSearchItem] = React.useState<Array<{ url: string; name: React.ReactNode }>>([]);
 
@@ -22,6 +24,26 @@ const CustomerHeader = () => {
       setSearchIsShow(false);
       setSearchItem([]);
     }
+  };
+
+  const HeaderIcon = () => {
+    return (
+      <>
+        <div className="header-button" style={{ paddingTop: 13 }}>
+          <Box className="icon-button-container">
+            <IconButton title="riwayat transaksi" href="/product">
+              <RequestQuote fontSize="medium" />
+            </IconButton>
+            <IconButton title="keranjang" href="/product">
+              <ShoppingCart fontSize="medium" />
+            </IconButton>
+            <IconButton title="akun" href="/product">
+              <PersonIcon fontSize="medium" />
+            </IconButton>
+          </Box>
+        </div>
+      </>
+    );
   };
 
   return (
@@ -35,19 +57,7 @@ const CustomerHeader = () => {
               </Button>
             </div>
             <SearchComponent searchItem={searchItem} searchIsShow={searchIsShow} searchOnChange={searchOnChange} />
-            <div className="header-button" style={{ paddingTop: 13 }}>
-              <Box className="icon-button-container">
-                <IconButton title="riwayat transaksi" href="/product">
-                  <RequestQuote fontSize="medium" />
-                </IconButton>
-                <IconButton title="keranjang" href="/product">
-                  <ShoppingCart fontSize="medium" />
-                </IconButton>
-                <IconButton title="akun" href="/product">
-                  <PersonIcon fontSize="medium" />
-                </IconButton>
-              </Box>
-            </div>
+            {screenSize.width > 900 ? <HeaderIcon /> : ''}
           </Box>
         </Container>
       </Paper>
