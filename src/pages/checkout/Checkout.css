@@ -1,0 +1,28 @@
+.checkout-container {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.checkout-title {
+  display: flex;
+  margin-bottom: 0.7rem;
+}
+
+.checkout-item {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.checkout-item > .description {
+  width: 45%;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}

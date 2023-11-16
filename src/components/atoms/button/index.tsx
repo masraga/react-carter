@@ -14,6 +14,7 @@ interface Props {
   component?: any;
   to?: any;
   type?: string;
+  sx?: any;
 }
 
 const Buttons = (props: Props) => {
@@ -29,6 +30,7 @@ const Buttons = (props: Props) => {
       component={props.component}
       to={props.to}
       type={props.type || 'submit'}
+      sx={props.sx}
     >
       {props.children}
     </MuiButton>
