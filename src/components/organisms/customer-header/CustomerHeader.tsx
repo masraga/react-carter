@@ -31,7 +31,7 @@ const CustomerHeader = () => {
       <>
         <div className="header-button" style={{ paddingTop: 13 }}>
           <Box className="icon-button-container">
-            <IconButton title="riwayat transaksi" href="/product">
+            <IconButton title="riwayat transaksi" href="/transaction/history">
               <RequestQuote fontSize="medium" />
             </IconButton>
             <IconButton title="keranjang" href="/product">
