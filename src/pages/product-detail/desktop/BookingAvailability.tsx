@@ -33,7 +33,7 @@ const BookingAvailability = (props: TBookingAvailability) => {
       <Paper sx={{ paddingTop: 2, paddingBottom: 2, minHeight: 350, maxHeight: 350, overflowY: 'scroll' }}>
         <Container>
           <Box>
-            <Typography variant="h6">JADWAL KETERSEDIAAN</Typography>
+            <Typography variant="h6">JADWAL YANG TELAH DIPESAN</Typography>
             <Table
               aria-label="simple label"
               sx={{ width: detailContext.tableWidth > 900 ? '100%' : detailContext.tableWidth }}
