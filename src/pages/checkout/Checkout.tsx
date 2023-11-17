@@ -5,19 +5,25 @@ import Container from '../../components/atoms/container';
 import { useTheme } from '@mui/material';
 import FormatMoney from '../../hooks/FormatMoney';
 import Buttons from '../../components/atoms/button';
-import Countdown from "react-countdown";
+import Countdown from 'react-countdown';
 import './Checkout.css';
 import '@fontsource/open-sans/600.css';
+import CustomerHeader from '../../components/organisms/customer-header/CustomerHeader';
 
 const Checkout = () => {
   const muiTheme = useTheme();
 
   const ExpiredComp = (expired: any) => {
-    return <Typography variant='body1'>{expired.hours}:{expired.minutes}:{expired.seconds}</Typography>;
-  }
+    return (
+      <Typography variant="body1">
+        {expired.hours}:{expired.minutes}:{expired.seconds}
+      </Typography>
+    );
+  };
 
   return (
     <>
+      <CustomerHeader />
       <Paper className="checkout-container" sx={{ paddingTop: 2, paddingBottom: 2 }}>
         <Container>
           <Box className="checkout-title">
@@ -62,10 +68,12 @@ const Checkout = () => {
           <Buttons variant="text" color="error" fullWidth={true}>
             Batalkan pembayaran
           </Buttons>
-          <Divider sx={{marginTop: 10}} />
-          <Box sx={{display: "flex", marginTop:1}}>
-            <Typography variant='body1' sx={{marginRight:1}}>kadaluarsa dalam </Typography>
-            <Countdown intervalDelay={0} date={Date.now() + 1000 * 2000} renderer={ExpiredComp}/>
+          <Divider sx={{ marginTop: 10 }} />
+          <Box sx={{ display: 'flex', marginTop: 1 }}>
+            <Typography variant="body1" sx={{ marginRight: 1 }}>
+              kadaluarsa dalam{' '}
+            </Typography>
+            <Countdown intervalDelay={0} date={Date.now() + 1000 * 2000} renderer={ExpiredComp} />
           </Box>
         </Container>
       </Paper>
