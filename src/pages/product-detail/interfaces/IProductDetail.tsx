@@ -1,3 +1,20 @@
+export type TProductInfo = {
+  productName: string;
+  productImage: string;
+  productFeelabel: string;
+  productStock: number;
+  productTotalFee: number;
+  productRating: number;
+  productSpec: Array<{ type: string | null; value: string | number | null }>;
+  setProductName: any;
+  setProductImage: any;
+  setProductFeelabel: any;
+  setProductStock: any;
+  setProductTotalFee: any;
+  setProductSpec: any;
+  setProductRating: any;
+};
+
 export type TBookingSummary = {
   bookingFee: number;
   isValidBook: boolean;
@@ -11,10 +28,11 @@ export type TBookingSummary = {
   setBookUrl: any;
 };
 
-export type TProductDetailContext = TBookingSummary & {
-  imageDimension: { width: number; height: number };
-  tableWidth: number;
-};
+export type TProductDetailContext = TProductInfo &
+  TBookingSummary & {
+    imageDimension: { width: number; height: number };
+    tableWidth: number;
+  };
 
 export type IProductInformation = {
   name: string;
