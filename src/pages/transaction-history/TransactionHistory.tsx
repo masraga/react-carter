@@ -97,7 +97,7 @@ const TransactionHistory = () => {
       };
       // END: show tx status
       HistoryCard.push(
-        <CardActionArea href="/product" key={Math.random()}>
+        <CardActionArea href={`/booking/summary/${history.code}`} key={Math.random()}>
           <Paper sx={{ padding: 2, width: cardWidth, margin: '0 auto', marginBottom: 3 }} key={Math.random()}>
             <Typography gutterBottom variant="h6">
               Pesanan: {history.code}
