@@ -1,0 +1,16 @@
+.button-back-container {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.button-back {
+  border-radius: 100%;
+  background-color: #181818 !important;
+  opacity: 0.4;
+}
+
+.content-container {
+  max-height: 300px;
+  overflow-y: 'scroll';
+}

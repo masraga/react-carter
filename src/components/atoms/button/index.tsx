@@ -1,7 +1,7 @@
 import MuiButton from '@mui/material/Button';
 import React from 'react';
 
-interface Props {
+export type Props = {
   children?: React.ReactNode;
   classes?: React.ReactNode;
   startIcon?: React.ReactNode;
@@ -15,7 +15,8 @@ interface Props {
   to?: any;
   type?: string;
   sx?: any;
-}
+  onClick?: any;
+};
 
 const Buttons = (props: Props) => {
   return (
@@ -31,6 +32,7 @@ const Buttons = (props: Props) => {
       to={props.to}
       type={props.type || 'submit'}
       sx={props.sx}
+      onClick={props.onClick}
     >
       {props.children}
     </MuiButton>
