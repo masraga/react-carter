@@ -92,7 +92,7 @@ const BookingForm = () => {
                 <Buttons variant="text" color="warning" onClick={cancelPayment}>
                   batal
                 </Buttons>
-                <Buttons variant="contained" color="warning">
+                <Buttons to={productContext.bookUrl} variant="contained" color="warning">
                   Bayar
                 </Buttons>
               </Box>

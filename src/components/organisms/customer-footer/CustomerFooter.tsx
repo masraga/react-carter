@@ -35,7 +35,12 @@ export default function CustomerFooter(props: TCustomerFooter) {
           }}
         >
           <BottomNavigationAction href="/product" value="dashboard" label="Dashboard" icon={<HomeIcon />} />
-          <BottomNavigationAction href="/transaction" value="transaksi" label="Transaksi" icon={<RequestQuoteIcon />} />
+          <BottomNavigationAction
+            href="/transaction/history"
+            value="transaksi"
+            label="Transaksi"
+            icon={<RequestQuoteIcon />}
+          />
           <BottomNavigationAction href="/cart" value="keranjang" label="Keranjang" icon={<ShoppingCartIcon />} />
           <BottomNavigationAction href="/account" value="akun" label="Akun" icon={<PersonIcon />} />
         </BottomNavigation>
