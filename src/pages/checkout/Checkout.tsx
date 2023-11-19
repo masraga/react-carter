@@ -35,11 +35,11 @@ const DBTx: Array<THistoryData> = [
 
 const Checkout = () => {
   const muiTheme = useTheme();
-  const [txData, setTxData] = React.useState<THistoryData>(DBTx[0]);
+  const [txData] = React.useState<THistoryData>(DBTx[0]);
 
   const PurchaseItemComp = () => {
     let itemComp: Array<React.ReactNode> = [];
-    txData.items.forEach((v, i) => {
+    txData.items.forEach((v) => {
       itemComp.push(
         <Box className="checkout-item" key={Math.random()}>
           <Box className="description">

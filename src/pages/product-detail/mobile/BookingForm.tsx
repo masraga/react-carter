@@ -57,7 +57,7 @@ const BookingForm = () => {
     setDrawerState({ ...drawerState, open: false });
   };
 
-  const cancelPayment = (e: any) => {
+  const cancelPayment = () => {
     productContext.setIsValidBook(false);
     productContext.setBookUrl('');
     setDrawerState({ ...drawerState, open: true });
