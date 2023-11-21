@@ -8,6 +8,7 @@ import FormatMoney from '../../hooks/FormatMoney';
 import './TransactionHistory.css';
 import '@fontsource/open-sans/600.css';
 import GetScreenSize from '../../hooks/GetScreenSize';
+import CustomerFooter from '../../components/organisms/customer-footer/CustomerFooter';
 
 type THistoryData = {
   code: string;
@@ -129,6 +130,7 @@ const TransactionHistory = () => {
       <Container>
         <HistoryCardComponent key="history-card" historyList={DBTx} />
       </Container>
+      {screenSize.width < 840 ? <CustomerFooter menu='transaksi' /> : <></> }
     </>
   );
 };

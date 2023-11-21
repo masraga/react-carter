@@ -32,12 +32,12 @@ const CustomerHeader = () => {
         <div className="header-button" style={{ paddingTop: 13 }}>
           <Box className="icon-button-container">
             <IconButton title="riwayat transaksi" href="/transaction/history">
-              <RequestQuote fontSize="medium" />
-            </IconButton>
-            <IconButton title="keranjang" href="/product">
               <ShoppingCart fontSize="medium" />
             </IconButton>
-            <IconButton title="akun" href="/product">
+            {/* <IconButton title="keranjang" href="/transaction/history">
+              <ShoppingCart fontSize="medium" />
+            </IconButton> */}
+            <IconButton title="akun" href="/account">
               <PersonIcon fontSize="medium" />
             </IconButton>
           </Box>
@@ -52,7 +52,7 @@ const CustomerHeader = () => {
         <Container>
           <Box className="header-item">
             <div className="app-title">
-              <Button variant="text" to="/" color="warning" className="btn-app-title">
+              <Button variant="text" to="/product" color="warning" className="btn-app-title">
                 K.
               </Button>
             </div>

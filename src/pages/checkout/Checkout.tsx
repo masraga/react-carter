@@ -10,6 +10,8 @@ import Countdown from 'react-countdown';
 import './Checkout.css';
 import '@fontsource/open-sans/600.css';
 import CustomerHeader from '../../components/organisms/customer-header/CustomerHeader';
+import GetScreenSize from '../../hooks/GetScreenSize';
+import CustomerFooter from '../../components/organisms/customer-footer/CustomerFooter';
 
 type THistoryData = {
   code: string;
@@ -36,6 +38,7 @@ const DBTx: Array<THistoryData> = [
 const Checkout = () => {
   const muiTheme = useTheme();
   const [txData] = React.useState<THistoryData>(DBTx[0]);
+  const screenSize = GetScreenSize();
 
   const PurchaseItemComp = () => {
     let itemComp: Array<React.ReactNode> = [];
@@ -131,6 +134,7 @@ const Checkout = () => {
           </Box>
         </Container>
       </Paper>
+      {screenSize.width < 840 ? <CustomerFooter menu='transaksi' /> : <></> }
     </>
   );
 };

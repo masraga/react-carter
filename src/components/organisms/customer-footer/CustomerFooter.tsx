@@ -39,9 +39,9 @@ export default function CustomerFooter(props: TCustomerFooter) {
             href="/transaction/history"
             value="transaksi"
             label="Transaksi"
-            icon={<RequestQuoteIcon />}
+            icon={<ShoppingCartIcon />}
           />
-          <BottomNavigationAction href="/cart" value="keranjang" label="Keranjang" icon={<ShoppingCartIcon />} />
+          {/* <BottomNavigationAction href="/cart" value="transaksi" label="Keranjang" icon={<ShoppingCartIcon />} /> */}
           <BottomNavigationAction href="/account" value="akun" label="Akun" icon={<PersonIcon />} />
         </BottomNavigation>
       </Paper>
