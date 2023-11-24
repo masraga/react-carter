@@ -34,6 +34,7 @@ const Login = () => {
   const [isUser, setIsUser] = React.useState(false);
 
   const onSubmit = (data: TLoginSchema) => {
+    console.log(data);
     setIsUser(true);
   }
 
@@ -109,9 +110,14 @@ const Login = () => {
                   )}
                 />
               </Grid>
-              <Grid item xs={12} paddingBottom={2}>
+              <Grid item xs={12} paddingBottom={1}>
                 <Buttons variant="contained" fullWidth color="warning" type="submit">
                   Login
+                </Buttons>
+              </Grid>
+              <Grid item xs={12} paddingBottom={2}>
+                <Buttons variant="text" fullWidth color="warning" to="/register">
+                  Daftar akun baru
                 </Buttons>
               </Grid>
             </Grid>
