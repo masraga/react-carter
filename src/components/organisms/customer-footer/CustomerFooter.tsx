@@ -3,7 +3,6 @@ import Paper from '../../atoms/paper';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import { useTheme } from '@mui/material/styles';

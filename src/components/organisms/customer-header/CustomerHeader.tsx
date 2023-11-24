@@ -6,7 +6,6 @@ import IconButton from '../../molecules/icon-button';
 import SearchComponent from '../../molecules/search-component';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
-import RequestQuote from '@mui/icons-material/RequestQuote';
 import '@fontsource/rubik/800.css';
 import './CustomerHeader.css';
 import React from 'react';

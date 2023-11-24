@@ -15,7 +15,7 @@ import LoginIcon from '@mui/icons-material/Login';
 
 const Account = () => {
   const screenSize = GetScreenSize();
-  const [isLogin, setIsLogin] = React.useState(false);
+  const [isLogin] = React.useState(false);
   return (
     <>
       <CustomerHeader />
