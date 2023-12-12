@@ -1,0 +1,15 @@
+body {
+  background: #fff !important;
+}
+
+.home-container {
+  width: 98% !important;
+  margin: 0 auto;
+}
+
+.bg-bycicle {
+  background-image: url('../../../sepeda.jpg');
+  object-fit: fill;
+  background-size: cover;
+  height: 100%;
+}

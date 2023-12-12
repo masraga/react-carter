@@ -6,12 +6,18 @@ interface Props {
   disableGutters?: boolean;
   fixed?: boolean;
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  className?: string;
 }
 
 const Container = (props: Props) => {
-  let { children, disableGutters, fixed, maxWidth } = props;
+  let { children, disableGutters, fixed, maxWidth, className } = props;
   return (
-    <MuiContainer disableGutters={disableGutters} fixed={fixed} maxWidth={maxWidth ? maxWidth : 'xl'}>
+    <MuiContainer
+      className={className}
+      disableGutters={disableGutters}
+      fixed={fixed}
+      maxWidth={maxWidth ? maxWidth : 'xl'}
+    >
       {children}
     </MuiContainer>
   );
